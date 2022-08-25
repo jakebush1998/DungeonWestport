@@ -58,6 +58,14 @@ namespace DungeonApp2
                     {
                         case "a":
                             Console.WriteLine("Attack!");
+                            Combat.Tussle(player, monster);
+
+                            if(monster.Life <= 0)
+                            {
+                                Console.WriteLine("You killed " + monster.Name + "!!!");
+                                reload = true;
+                                score ++;
+                            }
                             
                             //TODO Combat functionality
                             //If the player wins, leave the inner loop (repeat the outer loop)
